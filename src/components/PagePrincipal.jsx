@@ -6,7 +6,7 @@ function PagePrincipal() {
   return (
     <>
     <div className="container">
-      {/* Colonne gauche */}
+    
       <div className="left-column">
         <div className="vertical-text">料理をしましょう</div>
         <div className="title">
@@ -15,10 +15,10 @@ function PagePrincipal() {
         </div>
       </div>
 
-      {/* Colonne droite */}
+      
       <div className="right-column">
         <img
-          src="/PPLTS.png" // Chemin vers l'image dans public/
+          src="/PPLTS.png" 
           alt="Japon"
           className="background-image"
         />
