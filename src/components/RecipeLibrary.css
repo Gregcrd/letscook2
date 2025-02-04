@@ -1,82 +1,108 @@
-
+/* Conteneur des cartes */
 .Card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
-    margin: 120px;
-    
-    
-  }
-  
- 
-  .Card-item {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #6160604b;
-   
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+  gap: 20px;
+  margin: 120px auto;
+  max-width: 1400px; /* Pour éviter que les cartes soient trop larges */
+}
 
-  }
-  
-  .Card-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .Card-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    margin-bottom: 16px;
-  }
-  
-  
-  .Card-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 8px;
-  }
-  
-  
-  .Card-difficulty {
-    font-size: 1.8rem;
-    color: #e45f5f;
-    margin-bottom: 12px;
-  }
-  
-  
-  .Card-description {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 16px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: lighter;
-  }
-  
- 
-  .Card-button {
-    background-color: #e45f5f;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: auto; /* Pousse le bouton en bas de la carte */
-    align-self: flex-end; /* Aligne le bouton à droite */
-    transition: background-color 0.3s ease;
-  }
-  
-  
-  .Card-button:hover {
-    background-color: #8f3f3f;
-  }
+/* Style de chaque carte */
+.Card-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #2b2b2b; /* Fond plus foncé */
+  color: white;
+  text-align: center;
+}
+
+/* Effet au survol */
+.Card-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image dans la carte */
+.Card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 
+.Card-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin: 12px 0;
+}
+
+.Card-difficulty {
+  font-size: 1.5rem;
+  color: #e45f5f;
+  margin-bottom: 12px;
+}
+
+.Card-description {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  margin-bottom: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  text-align: justify;
+}
 
 
+.Card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.Card-button,
+.delete-button {
+  background-color: #e45f5f;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1; 
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+
+.delete-button {
+  background-color: #e45f5f;
+  margin-left: 10px;
+}
+
+
+.Card-button:hover {
+  background-color: #8f3f3f;
+}
+
+.delete-button:hover {
+  background-color: #e45f5f;
   
+}
+
+
+@media (max-width: 1024px) {
+  .Card-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .Card-container {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
